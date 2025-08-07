@@ -3,6 +3,9 @@ import { useState } from 'react';
 import Image from 'next/image';
 import styles from './AuthForm.module.scss';
 import { useAuth } from '../model/useAuth';
+import googleIcon from '@/shared/imgs/google.svg';
+import appleIcon from '@/shared/imgs/apple.svg';
+import vkIcon from '@/shared/imgs/vk.svg';
 
 export const AuthForm = () => {
   const [mode, setMode] = useState<'login' | 'register'>('login');
@@ -66,16 +69,13 @@ export const AuthForm = () => {
 
       <div className={styles.authForm__social}>
         <button onClick={() => loginWithProvider('google')}>
-          <Image src="/icons/google.svg" alt="Google" width={20} height={20} />
-          Google
+          <Image src={googleIcon} alt="Google" width={20} height={20} />
         </button>
         <button onClick={() => loginWithProvider('vk')}>
-          <Image src="/icons/vk.svg" alt="VK" width={20} height={20} />
-          VK
+          <Image src={vkIcon} alt="VK" width={20} height={20} />
         </button>
         <button onClick={() => loginWithProvider('apple')}>
-          <Image src="/icons/apple.svg" alt="Apple" width={20} height={20} />
-          Apple
+          <Image src={appleIcon} alt="Apple" width={20} height={20} />
         </button>
       </div>
     </div>
